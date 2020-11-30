@@ -3,7 +3,9 @@ text-align: center;
 margin: 20px;
 padding: 10px;
 color: darkorchid;}
-
-form {
+.submitForm{
     margin: 50px;
+    padding: 50px;
+    border: 5px solid green;
+    border-radius: 20px;
 }
