@@ -1,0 +1,46 @@
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  color: darkorchid;
+}
+.submitForm {
+  margin: auto;
+  padding: 50px;
+  border: 5px solid green;
+  border-radius: 20px;
+  width: 40rem;
+  margin-bottom: 40px;
+}
+
+button {
+
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.card {
+  text-align: center;
+  margin-top: 40px;
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.layoutname{
+    text-align: center;
+    color: lighygrey;
+    margin: auto;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.list-group-item{
+  display: inline;
+  margin-left:25px;
+  margin-right: 25px;
+  width:auto;
+  }
+  
+  
