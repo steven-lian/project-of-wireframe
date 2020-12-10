@@ -1,14 +1,12 @@
 h1 {
 
-  
   font-family: 'Courgette', cursive, 'Source Sans Pro', sans-serif;
-
-
   text-align: center;
   margin: 20px;
   padding: 10px;
-  color: rgb(21, 4, 29);
-  
+  color: darkorchid;
+  font-style: italic;
+
 }
 
 .navbar-brand>img {
