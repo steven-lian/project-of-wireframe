@@ -5,7 +5,7 @@ const formFieldInput = document.querySelector("#formFieldInput");
 formFieldInput.addEventListener("submit",(event) => {
 
     //prevent default action when submitting form
-    event.preventDefault;
+    event.preventDefault();
 
 
     //select input
