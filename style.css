@@ -1,11 +1,21 @@
 h1 {
-  font-family: cursive, Helvetica, sans-serif;
-  font-style: italic;
+
+  
+  font-family: 'Courgette', cursive, 'Source Sans Pro', sans-serif;
+
+
   text-align: center;
   margin: 20px;
   padding: 10px;
-  color: darkorchid;
+  color: rgb(21, 4, 29);
+  
 }
+
+.navbar-brand>img {
+height: 50px;
+width: 50px;
+}
+
 .submitForm {
   margin: auto;
   padding: 50px;
