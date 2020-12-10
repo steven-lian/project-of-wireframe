@@ -1,6 +1,8 @@
 h1 {
-  /*font-family: Arial, Helvetica, sans-serif;*/
+
+  
   font-family: 'Courgette', cursive, 'Source Sans Pro', sans-serif;
+
 
   text-align: center;
   margin: 20px;
@@ -51,5 +53,6 @@ button {
   margin-right: 25px;
   width:auto;
   }
-  
+
+ img {border-radius: 15px;}
   
