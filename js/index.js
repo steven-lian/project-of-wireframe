@@ -5,7 +5,7 @@ const formFieldInput = document.querySelector("#formFieldInput");
 formFieldInput.addEventListener("submit",(event) => {
 
     //prevent default action when submitting form
-    event.preventDefault;
+    event.preventDefault();
 
 
     //select input
@@ -13,6 +13,7 @@ formFieldInput.addEventListener("submit",(event) => {
     const formFieldDescription = document.querySelector("#formFieldDescription");
     const formFieldAssigned = document.querySelector("#formFieldAssigned");
     const formFieldDue = document.querySelector("#formFieldDue");
+    const formFieldStatus = document.querySelector("#formFieldStatus");
     const errorMessage = document.querySelector("#alertMessage");
 
 
@@ -34,7 +35,19 @@ formFieldInput.addEventListener("submit",(event) => {
 
         let assigned = document.forms["formFieldInput"]["formFieldAssigned"].value;
         if(assigned===""){
-            alert("Assigned must be filled out");
+            alert("Assigned date must be filled out");
+            return false;
+        }
+
+        let due = document.forms["formFieldInput"]["formFieldDue"].value;
+        if(due===""){
+            alert("Due date must be filled out");
+            return false;
+        }
+
+        let status = document.forms["formFieldInput"]["formFieldStatus"].value;
+        if(status===""){
+            alert(" Task Status must be filled out");
             return false;
         }
 
@@ -48,8 +61,9 @@ formFieldInput.addEventListener("submit",(event) => {
     const description= formFieldDescription.value;
     const assigned = formFieldAssigned.value;
     const due = formFieldDue.value;
+    const status = formFieldStatus.value;
 
-    if(!validFormFieldInput(name,description,assigned,due)){
+    if(!validFormFieldInput(name,description,assigned,due,status)){
         errorMessage.innerHTML = "Invalid name input";
         errorMessage.style.display = "block"
     }else{
