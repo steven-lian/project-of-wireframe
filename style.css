@@ -1,10 +1,10 @@
 h1 {
-  font-family: cursive, Helvetica, sans-serif;
-  font-style: italic;
+  font-family: 'Courgette', cursive, 'Source Sans Pro', sans-serif;
   text-align: center;
   margin: 20px;
   padding: 10px;
   color: darkorchid;
+  font-style: italic;
 }
 .submitForm {
   margin: auto;
