@@ -6,6 +6,8 @@ formFieldInput.addEventListener("submit",(event) => {
 
     //prevent default action when submitting form
     event.preventDefault();
+    // event.stopPropagation();
+
 
 
     //select input
@@ -15,6 +17,7 @@ formFieldInput.addEventListener("submit",(event) => {
     const formFieldDue = document.querySelector("#formFieldDue");
     const formFieldStatus = document.querySelector("#formFieldStatus");
     const errorMessage = document.querySelector("#alertMessage");
+    errorMessage.innerHTML = "";
 
 
 
@@ -23,32 +26,32 @@ formFieldInput.addEventListener("submit",(event) => {
     function validFormFieldInput(){
         let name = document.forms["formFieldInput"]["formFieldName"].value;
         if(name===""){
-            alert("Name must be filled out");
-            return false;
+            errorMessage.innerHTML += "Invalid name input";
+           
         }
 
         let description = document.forms["formFieldInput"]["formFieldDescription"].value;
         if(description===""){
-            alert("Description must be filled out");
-            return false;
+            errorMessage.innerHTML += "Invalid description input";
+           
         }
 
         let assigned = document.forms["formFieldInput"]["formFieldAssigned"].value;
         if(assigned===""){
-            alert("Assigned date must be filled out");
-            return false;
+            errorMessage.innerHTML += "Invalid assigned input";
+         
         }
 
         let due = document.forms["formFieldInput"]["formFieldDue"].value;
         if(due===""){
-            alert("Due date must be filled out");
-            return false;
+            errorMessage.innerHTML += "Invalid due input";
+            
         }
 
         let status = document.forms["formFieldInput"]["formFieldStatus"].value;
         if(status===""){
-            alert(" Task Status must be filled out");
-            return false;
+            errorMessage.innerHTML += "Invalid status input";
+            
         }
 
         
@@ -64,7 +67,7 @@ formFieldInput.addEventListener("submit",(event) => {
     const status = formFieldStatus.value;
 
     if(!validFormFieldInput(name,description,assigned,due,status)){
-        errorMessage.innerHTML = "Invalid name input";
+        
         errorMessage.style.display = "block"
     }else{
         errorMessage.style.display = "none"
@@ -77,3 +80,7 @@ formFieldInput.addEventListener("submit",(event) => {
 function validFormFieldInput(data){
     return data !== null && data !== '';
 }
+
+
+let project = new task(project1,html,jane,2/2/20,toDo);
+project.tasks();

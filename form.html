@@ -18,6 +18,8 @@
 
 <body>
 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <a class="navbar-brand"><img class="rounded-circle" src="taskLogo.png" alt="task planner Logo"   height="50"></a>
 
 
     <a class="navbar-brand text-success" href="index.html">Home</a>
@@ -78,13 +80,150 @@
         <option>Done</option>
       
       </select>
+
       
     </div>
     <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+    <div class="alert alert-warning" role="alert" id="alertMessage">
+ 
+    </div>
   </form>
-  <div class="alert alert-dark" role="alert" id="alertMessage">
-    Yoy need to fill out the form!
-  </div>
+  
+
+  <!-- Tasklist Starts here -->
+
+  <section>
+    
+    <div class="container">
+      <div class="row">
+        <h5 class="layoutname">Tasks layout in card group </h5>
+      </div>
+      <div class="row">
+        <div class="col card list-group-item-primary">
+          <div class="card-body  ">
+            <h5 class="card-title">Task 1</h5>
+            <h6 class="card-subtitle mb-2 text-info">Task status:To Do</h6>
+            <p class="card-text text-info">Task description</p>
+            <p class="card-text text-info">Assigned to</p>
+            <p class="card-text text-info">Due date</p>
+  
+          </div>
+        </div>
+        <div class="col card list-group-item-secondary">
+          <div class="card-body">
+            <h5 class="card-title">Task 2</h5>
+            <h6 class="card-subtitle mb-2 text-info">Task status:In Progress</h6>
+            <p class="card-text text-info">Task description</p>
+            <p class="card-text text-info">Assigned to</p>
+            <p class="card-text text-info">Due date</p>
+  
+          </div>
+        </div>
+        <div class="col card list-group-item-success">
+          <div class="card-body">
+            <h5 class="card-title">Task 3</h5>
+            <h6 class="card-subtitle mb-2 text-info">Task status:Review</h6>
+            <p class="card-text text-info">Task description</p>
+            <p class="card-text text-info">Assigned to</p>
+            <p class="card-text text-info">Due date</p>
+  
+          </div>
+        </div>
+        <div class="col card list-group-item-primary">
+          <div class="card-body">
+            <h5 class="card-title">Task 4</h5>
+            <h6 class="card-subtitle mb-2 text-success">Task status:Done</h6>
+            <p class="card-text text-info">Task description</p>
+            <p class="card-text text-info">Assigned to</p>
+            <p class="card-text text-info">Due date</p>
+  
+          </div>
+        </div>
+        <div class="col card list-group-item-danger">
+          <div class="card-body">
+            <h5 class="card-title">Task 5</h5>
+            <h6 class="card-subtitle mb-2 text-danger">Task status:Overdue</h6>
+            <p class="card-text text-info">Task description</p>
+            <p class="card-text text-info">Assigned to</p>
+            <p class="card-text text-info">Due date</p>
+  
+          </div>
+        </div>
+  
+      </div>
+  
+      <br>
+      <hr>
+      <br>
+  
+      <ul class="list-group">
+        <li class="list-group-item">
+          <h5 class="layoutname">Tasks layout in list group</h5>
+        </li>
+  
+  
+        
+  
+        <li class="list-group-item list-group-item-info">
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">Task Name</li>
+            <li class="list-group-item">Task Status</li>
+            <li class="list-group-item">Task Description</li>
+            <li class="list-group-item">Assigned To</li>
+            <li class="list-group-item">Due Date</li>
+          </ul>
+        </li>
+  
+        <li class="list-group-item list-group-item-secondary">
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">Task Name</li>
+            <li class="list-group-item">Task Status</li>
+            <li class="list-group-item">Task Description</li>
+            <li class="list-group-item">Assigned To</li>
+            <li class="list-group-item">Due Date</li>
+          </ul>
+        </li>
+        <li class="list-group-item list-group-item-success">
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">Task Name</li>
+            <li class="list-group-item">Task Status</li>
+            <li class="list-group-item">Task Description</li>
+            <li class="list-group-item">Assigned To</li>
+            <li class="list-group-item">Due Date</li>
+          </ul>
+        </li>
+        <li class="list-group-item list-group-item-primary">
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">Task Name</li>
+            <li class="list-group-item">Task Status</li>
+            <li class="list-group-item">Task Description</li>
+            <li class="list-group-item">Assigned To</li>
+            <li class="list-group-item">Due Date</li>
+          </ul>
+        </li>
+       
+        <li class="list-group-item list-group-item-danger">
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">Task Name</li>
+            <li class="list-group-item">Task Status</li>
+            <li class="list-group-item">Task Description</li>
+            <li class="list-group-item">Assigned To</li>
+            <li class="list-group-item">Due Date</li>
+          </ul>
+        </li>
+  
+      </ul>
+
+      
+   
+
+    
+  
+      
+  
+  
+   </section>
+
  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -92,6 +231,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
  integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
  crossorigin="anonymous"></script>
+ <script src="js/taskManager.js" type="text/javascript"></script>
  <script src="js/index.js" type="text/javascript"></script>
 
 </body>
