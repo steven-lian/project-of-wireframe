@@ -1,3 +1,12 @@
+// import TaskManager from './taskManager';
+const taskManager = new TaskManager(0);
+console.log(taskManager.tasks);
+
+const taskManager2 = new TaskManager(0);
+console.log(taskManager2.addTasks);
+
+// const newTaskForm = document.querySelector('#newTaskForm');
+
 // select formFieldInput form
 const formFieldInput = document.querySelector("#formFieldInput");
 
@@ -82,5 +91,6 @@ function validFormFieldInput(data){
 }
 
 
-let project = new task(project1,html,jane,2/2/20,toDo);
-project.tasks();
+
+
+
