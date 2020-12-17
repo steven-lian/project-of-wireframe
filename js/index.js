@@ -1,12 +1,26 @@
+// task6
+// call function
+
+const taskHtml = createTaskHtml("name","description","assignedTo","dueDate","status");
+console.log(taskHtml);
+
+
+
+
+// task5
 // import TaskManager from './taskManager';
 const taskManager = new TaskManager(0);
+// console.log(taskManager.tasks);
+
+// const taskManager2 = new TaskManager(0);
+// taskManager.addTasks("name","description","assignedTo","dueDate","status");
 console.log(taskManager.tasks);
 
-const taskManager2 = new TaskManager(0);
-console.log(taskManager2.addTasks);
+// const newTaskForm = document.querySelector('#formFieldInput');
 
-// const newTaskForm = document.querySelector('#newTaskForm');
 
+
+// task4
 // select formFieldInput form
 const formFieldInput = document.querySelector("#formFieldInput");
 
@@ -33,31 +47,31 @@ formFieldInput.addEventListener("submit",(event) => {
     // validation code
 
     function validFormFieldInput(){
-        let name = document.forms["formFieldInput"]["formFieldName"].value;
+        // let name = document.forms["formFieldInput"]["formFieldName"].value;
         if(name===""){
             errorMessage.innerHTML += "Invalid name input";
            
         }
 
-        let description = document.forms["formFieldInput"]["formFieldDescription"].value;
+        // let description = document.forms["formFieldInput"]["formFieldDescription"].value;
         if(description===""){
             errorMessage.innerHTML += "Invalid description input";
            
         }
 
-        let assigned = document.forms["formFieldInput"]["formFieldAssigned"].value;
+        // let assigned = document.forms["formFieldInput"]["formFieldAssigned"].value;
         if(assigned===""){
             errorMessage.innerHTML += "Invalid assigned input";
          
         }
 
-        let due = document.forms["formFieldInput"]["formFieldDue"].value;
+        // let due = document.forms["formFieldInput"]["formFieldDue"].value;
         if(due===""){
             errorMessage.innerHTML += "Invalid due input";
             
         }
 
-        let status = document.forms["formFieldInput"]["formFieldStatus"].value;
+        // let status = document.forms["formFieldInput"]["formFieldStatus"].value;
         if(status===""){
             errorMessage.innerHTML += "Invalid status input";
             
@@ -74,13 +88,28 @@ formFieldInput.addEventListener("submit",(event) => {
     const assigned = formFieldAssigned.value;
     const due = formFieldDue.value;
     const status = formFieldStatus.value;
-
+    //  console.log(due);
     if(!validFormFieldInput(name,description,assigned,due,status)){
         
         errorMessage.style.display = "block"
     }else{
         errorMessage.style.display = "none"
     }
+
+
+    // Add the task to the task manager
+    taskManager.addTasks(name, description, assigned, due, status);
+    
+    // call render method
+    taskManager.render();
+
+
+    // Clear the form
+    formFieldName.value = '';
+    formFieldDescription.value = '';
+    formFieldAssigned.value = '';
+    formFieldDue.value = '';
+    
 
 
 
