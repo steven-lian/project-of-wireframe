@@ -127,7 +127,7 @@ tasksList.addEventListener('click', (event) => {
         const parentTask = event.target.parentElement.parentElement;
        
         // test "Mark As Done" button on the newly created task
-        console.log(parentTask);
+        // console.log(parentTask);
 
         // Get the taskId of the parent Task.
         const taskId = Number(parentTask.dataset.taskId);
@@ -136,10 +136,10 @@ tasksList.addEventListener('click', (event) => {
         const task = taskManager.getTaskById(taskId);
         // console.log(task);
 
-        // // Update the task status to 'DONE'
-        // task.status = 'DONE';
+        // Update the task status to 'DONE'
+        task.status = 'DONE';
 
-        // // Render the tasks
-        // taskManager.render();
+        // Render the tasks
+        taskManager.render();
     }
 });
