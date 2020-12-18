@@ -98,10 +98,11 @@ formFieldInput.addEventListener("submit",(event) => {
 
 
     // Add the task to the task manager
-    taskManager.addTasks(name, description, assigned, due, status);
-    
-    // call render method
+    taskManager.addTasks(name, description, assigned, due);
+
+   
     taskManager.render();
+    
 
 
     // Clear the form
@@ -109,17 +110,43 @@ formFieldInput.addEventListener("submit",(event) => {
     formFieldDescription.value = '';
     formFieldAssigned.value = '';
     formFieldDue.value = '';
+
+
     
 
 
 
 });
 
-function validFormFieldInput(data){
+// Select the Tasks List
+const tasksList = document.querySelector('#tasksList');
+
+// Add an 'onclick' event listener to the Tasks List
+tasksList.addEventListener('click', (event) => {
+    // Check if a "Mark As Done" button was clicked
+    if (event.target.classList.contains('done-button')) {
+        // Get the parent Task
+        const parentTask = event.target.parentElement.parentElement.parentElement;
+        console.log(parentTask);
+
+        // Get the taskId of the parent Task.
+        const taskId = Number(parentTask.dataset.taskId);
+        console.log(taskId);
+
+        // Get the task from the TaskManager using the taskId
+        const task = taskManager.getTaskById(taskId);
+        console.log(task);
+
+        // Update the task status to 'DONE'
+        task.status = 'DONE';
+
+        // Render the tasks
+        taskManager.render();
+    }
+});
+
+function validFormFieldInput(data) {
     return data !== null && data !== '';
 }
-
-
-
 
 
