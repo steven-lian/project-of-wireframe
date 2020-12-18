@@ -11,6 +11,7 @@ import {TaskManager} from './taskManager.js';
 
 //create two new instances to test 
 const taskManager = new TaskManager(0);
+// taskManager.addTasks("sgbvv","hhh","jjj","hgh","cc");
 // console.log(taskManager.tasks);
 
 // const taskManager2 = new TaskManager(0);
@@ -97,7 +98,7 @@ formFieldInput.addEventListener("submit",(event) => {
         
         //  const newTaskSubmit = new TaskManager(0);
          taskManager.addTasks(name,description,assigned,due,status);
-        //  console.log(newTaskSubmit.tasks);
+        //  console.log(taskManager.tasks);
 
     // Render the tasks
     taskManager.render();
@@ -124,17 +125,21 @@ tasksList.addEventListener('click', (event) => {
     if (event.target.classList.contains('done-button')) {
         // Get the parent Task
         const parentTask = event.target.parentElement.parentElement;
+       
+        // test "Mark As Done" button on the newly created task
+        console.log(parentTask);
 
         // Get the taskId of the parent Task.
         const taskId = Number(parentTask.dataset.taskId);
 
         // Get the task from the TaskManager using the taskId
         const task = taskManager.getTaskById(taskId);
+        // console.log(task);
 
-        // Update the task status to 'DONE'
-        task.status = 'DONE';
+        // // Update the task status to 'DONE'
+        // task.status = 'DONE';
 
-        // Render the tasks
-        taskManager.render();
+        // // Render the tasks
+        // taskManager.render();
     }
 });

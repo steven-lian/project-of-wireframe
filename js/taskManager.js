@@ -1,8 +1,8 @@
 // Create and export a createTaskHtml function 
-export const createTaskHtml = (name,description,assignedTo,dueDate,status) =>
+export const createTaskHtml = (id,name,description,assignedTo,dueDate,status) =>
  
  `
- <li class="list-group-item">
+ <li class="list-group-item" data-task-id=${id}>
         <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
             <h5>${name}</h5>
             <span class="badge badge-danger">${status}</span>
@@ -13,9 +13,7 @@ export const createTaskHtml = (name,description,assignedTo,dueDate,status) =>
         </div>
         <p>${description}</p>
 
-    
-
-        <div class="d-flex w-100 justify-content-end">
+    <div class="d-flex w-100 justify-content-end">
         <button class="btn btn-outline-success done-button ${status === 'To do' ? 'visible' : 'invisible'}">Mark As Done</button>
     </div>
     </li>
@@ -40,7 +38,7 @@ export class TaskManager {
     
     //create a task object with self-increment id and input name 
         const task = {
-        id : this.currentId ++,
+        id: this.currentId++,
         name: name,
         description: description,
         assignedTo : assignedTo,
@@ -52,6 +50,28 @@ export class TaskManager {
         this.tasks.push(task);
     
   }
+  
+// task 7
+//   Step 4: Adding getTaskById to the TaskManager class
+  getTaskById(taskId) {
+    // Create a variable to store the found task
+    let foundTask;
+
+    // Loop over the tasks and find the task with the id passed as a parameter
+    for (let i = 0; i < this.tasks.length; i++) {
+        // Get the current task in the loop
+        const task = this.tasks[i];
+
+        // Check if its the right task by comparing the task's id to the id passed as a parameter
+        if (task.id === taskId) {
+            // Store the task in the foundTask variable
+            foundTask = task;
+        }
+    }
+
+    // Return the found task
+    return foundTask;
+}
 
  // Create the render method
     render() {
@@ -68,7 +88,7 @@ export class TaskManager {
             const formattedDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
 
             // Create the task html
-            const taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate, task.status);
+            const taskHtml = createTaskHtml(task.id,task.name, task.description, task.assignedTo, formattedDate, task.status);
 
             // Push it to the tasksHtmlList array
             tasksHtmlList.push(taskHtml);
