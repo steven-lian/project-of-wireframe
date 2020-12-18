@@ -12,6 +12,12 @@ export const createTaskHtml = (name,description,assignedTo,dueDate,status) =>
             <small>Due: ${dueDate}</small>
         </div>
         <p>${description}</p>
+
+    
+
+        <div class="d-flex w-100 justify-content-end">
+        <button class="btn btn-outline-success done-button ${status === 'To do' ? 'visible' : 'invisible'}">Mark As Done</button>
+    </div>
     </li>
 `;
 
