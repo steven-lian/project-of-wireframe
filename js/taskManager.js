@@ -5,7 +5,7 @@ export const createTaskHtml = (id,name,description,assignedTo,dueDate,status) =>
  <li class="list-group-item" data-task-id=${id}>
         <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
             <h5>${name}</h5>
-            <span class="badge badge-danger">${status}</span>
+            <span class="badge ${(status === 'To do' ||status === 'In progress'||status === 'Review') ? 'badge-danger' : 'badge-success'}">${status}</span>
         </div>
         <div class="d-flex w-100 mb-3 justify-content-between">
             <small>Assigned To: ${assignedTo}</small>
@@ -14,7 +14,7 @@ export const createTaskHtml = (id,name,description,assignedTo,dueDate,status) =>
         <p>${description}</p>
 
     <div class="d-flex w-100 justify-content-end">
-        <button class="btn btn-outline-success done-button ${status === 'To do' ? 'visible' : 'invisible'}">Mark As Done</button>
+        <button class="btn btn-outline-success done-button ${(status === 'To do' ||status === 'In progress'||status === 'Review') ? 'visible' : 'invisible'}">Mark As Done</button>
     </div>
     </li>
 `;
@@ -50,7 +50,7 @@ export class TaskManager {
         this.tasks.push(task);
     
   }
-  
+
 // task 7
 //   Step 4: Adding getTaskById to the TaskManager class
   getTaskById(taskId) {

@@ -138,7 +138,7 @@ tasksList.addEventListener('click', (event) => {
 
         // Update the task status to 'DONE'
         task.status = 'DONE';
-
+       
         // Render the tasks
         taskManager.render();
     }
