@@ -25,9 +25,11 @@ const formFieldInput = document.querySelector("#formFieldInput");
 //add an onsubmit event listener to the form tag
 formFieldInput.addEventListener("submit",(event) => {
 
+
     //prevent default action of refreshing page when submitting form
     event.preventDefault();
     // event.stopPropagation();
+
 
 
 
@@ -113,6 +115,7 @@ formFieldInput.addEventListener("submit",(event) => {
         
 });
 
+
 // function validFormFieldInput(data){
 //     return data !== null && data !== '';
 // }
@@ -143,3 +146,4 @@ tasksList.addEventListener('click', (event) => {
         taskManager.render();
     }
 });
+
