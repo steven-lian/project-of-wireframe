@@ -17,10 +17,8 @@
 
 <body>
 
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-    <a class="navbar-brand"><img class="rounded-circle" src="taskLogo.png" alt="task planner Logo"   height="50"></a>
- main
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand"><img class="rounded-circle" src="taskLogo.png" alt="task planner Logo" height="50"></a>
     <a class="navbar-brand text-success" href="index.html">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +28,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link text-primary" href="form.html">Add tasks </a>
+          <a class="nav-link text-primary" href="taskslist.html">Add tasks </a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-primary" href="taskslist.html">Tasks card</a>
@@ -47,12 +45,56 @@
     </div>
   </nav>
 
+
+  <h1>Tasks Form</h1>
+
+  <form class="submitForm" id="formFieldInput">
+    <div class="form-group">
+      <label for="formGroupExampleInput">Name</label>
+      <input type="text" class="form-control" id="formFieldName" placeholder="task name">
+
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea class="form-control" id="formFieldDescription" rows="3"></textarea>
+
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Assigned To</label>
+      <input type="text" class="form-control" id="formFieldAssigned" placeholder="the person you want to assign">
+
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Due Date</label>
+      <input type="date" class="form-control" id="formFieldDue" placeholder="dd/month/year">
+
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Task Status</label>
+      <select class="form-control" id="formFieldStatus">
+        <option>To do</option>
+        <option>In progress</option>
+        <option>Review</option>
+        <option>Done</option>
+
+      </select>
+
+
+    </div>
+    <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+    <div class="alert text-danger" role="alert" id="alertMessage">
+
+    </div>
+  </form>
+
+
+
   <div class="container">
     <div class="row">
       <h5 class="layoutname">Tasks layout in card group </h5>
     </div>
-    <div class="row">
-      <div class="col card list-group-item-primary">
+    <div class="row" id="tasksList">
+      <div class="col card list-group-item-primary" >
         <div class="card-body  ">
           <h5 class="card-title">Task 1</h5>
           <h6 class="card-subtitle mb-2 text-info">Task status:To Do</h6>
@@ -105,20 +147,17 @@
 
     </div>
 
-    <br>
+    <!-- <br>
     <hr>
     <br>
 
     <ul class="list-group">
       <li class="list-group-item">
-        <h5 class="layoutname">Tasks layout in list group</h5>
+        <h5 class="layoutname">Tasks list</h5>
       </li>
 
-
-      
-
       <li class="list-group-item list-group-item-info">
-        <ul class="list-group list-group-horizontal">
+        <ul class="list-group list-group-horizontal" >
           <li class="list-group-item">Task Name</li>
           <li class="list-group-item">Task Status</li>
           <li class="list-group-item">Task Description</li>
@@ -136,6 +175,7 @@
           <li class="list-group-item">Due Date</li>
         </ul>
       </li>
+
       <li class="list-group-item list-group-item-success">
         <ul class="list-group list-group-horizontal">
           <li class="list-group-item">Task Name</li>
@@ -163,17 +203,27 @@
           <li class="list-group-item">Assigned To</li>
           <li class="list-group-item">Due Date</li>
         </ul>
-      </li>
+      </li> -->
 
     </ul>
+    <br>
+    <br>
+    <br>
 
-     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-  crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-  crossorigin="anonymous"></script>
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"></script>
+
+    <script src="js/taskManager.js" type="module"></script>
+
+    <script src="js/index.js" type="module"></script>
+
+
+
 
 </body>
 
