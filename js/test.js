@@ -26,6 +26,21 @@ describe("TaskManager", () => {
         
        })
 
+
+       it("should get task by id", () => {
+        const taskManager = new TaskManager(0);
+        taskManager.addTasks();
+        taskManager.addTasks();
+        taskManager.addTasks();
+        let x = taskManager.tasks[2].id;
+
+        taskManager.getTaskById(2);
+
+        assert.ok(x===2);
+
+
+       })
+
        
     
   })
