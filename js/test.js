@@ -32,11 +32,12 @@ describe("TaskManager", () => {
         taskManager.addTasks();
         taskManager.addTasks();
         taskManager.addTasks();
-        let x = taskManager.tasks[2].id;
+        // let x = taskManager.tasks[1].id;
+        let x = taskManager.getTaskById(1).id
 
-        taskManager.getTaskById(2);
+        // taskManager.getTaskById(1);
 
-        assert.ok(x===2);
+        assert.ok(x===1);
 
 
        })
