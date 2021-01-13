@@ -1,27 +1,28 @@
 // import createTaskHtml function from './taskManager';
-import {createTaskHtml} from './taskManager.js';
+// import {createTaskHtml} from './taskManager.js';
 
-const taskHtml = createTaskHtml ('name','description','assignedTo','dueDate','status')
+// const taskHtml = createTaskHtml ('name','description','assignedTo','dueDate','status')
 
-console.log(taskHtml);
+// console.log(taskHtml);
 
 // import TaskManager class from './taskManager';
 
-import {TaskManager} from './taskManager.js';
+import {TaskManager} from './taskManager.js';                                                                                                                               
 
 //create two new instances to test 
 const taskManager = new TaskManager(0);
 // taskManager.addTasks("sgbvv","hhh","jjj","hgh","cc");
+//sprint 3 Task 8: Persisting Data
+taskManager.load();
+
+taskManager.render();
 // console.log(taskManager.tasks);
 
 // const taskManager2 = new TaskManager(0);
 // taskManager2.addTasks("sgbvv","hhh","jjj","hgh","cc");
 // console.log(taskManager2.tasks);
 
-//sprint 3 Task 8: Persisting Data
-taskManager.load();
 
-taskManager.render();
 
 
 // select formFieldInput form

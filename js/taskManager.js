@@ -1,5 +1,6 @@
 // Create and export a createTaskHtml function 
-export const createTaskHtml = (id,name,description,assignedTo,dueDate,status) =>
+
+  const createTaskHtml = (id,name,description,assignedTo,dueDate,status) =>
  
  `
  <li class="list-group-item" data-task-id=${id}>
@@ -25,7 +26,7 @@ export const createTaskHtml = (id,name,description,assignedTo,dueDate,status) =>
 
 // Create and export a TaskManager class 
 
-export class TaskManager {
+ class TaskManager {
  
     //creat a empty array called tasks to store each new task object 
     constructor(currentId = 0) {
@@ -153,3 +154,5 @@ deleteTask(taskId) {
   
 }
 
+ module.exports = TaskManager;
+//  module.exports = createTaskHtml;
