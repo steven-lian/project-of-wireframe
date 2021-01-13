@@ -1,6 +1,8 @@
+
+
 // task6
 // call function
-
+//import {createTaskHtml} from './taskManager.js';
 const taskHtml = createTaskHtml("name","description","assignedTo","dueDate","status");
 console.log(taskHtml);
 
@@ -9,8 +11,13 @@ console.log(taskHtml);
 
 // task5
 // import TaskManager from './taskManager';
+//import {TaskManager} from './taskManager.js';
 const taskManager = new TaskManager(0);
 // console.log(taskManager.tasks);
+
+//task8
+taskManager.load();
+taskManager.render();
 
 // const taskManager2 = new TaskManager(0);
 // taskManager.addTasks("name","description","assignedTo","dueDate","status");
@@ -100,6 +107,8 @@ formFieldInput.addEventListener("submit",(event) => {
     // Add the task to the task manager
     taskManager.addTasks(name, description, assigned, due);
 
+    taskManager.save();
+
    
     taskManager.render();
     
@@ -139,6 +148,25 @@ tasksList.addEventListener('click', (event) => {
 
         // Update the task status to 'DONE'
         task.status = 'DONE';
+         
+        taskManager.save();
+        // Render the tasks
+        taskManager.render();
+    }
+
+  // Check for delete button clicked
+    if (event.target.classList.contains('delete-button')) {
+        // Get the parent Task
+        const parentTask = event.target.parentElement.parentElement.parentElement;
+
+        // Get the taskId of the parent Task.
+        const taskId = Number(parentTask.dataset.taskId);
+
+        // Delete the task
+        taskManager.deleteTask(taskId);
+
+        // Save the tasks to localStorage
+        taskManager.save();
 
         // Render the tasks
         taskManager.render();
