@@ -18,6 +18,11 @@ const taskManager = new TaskManager(0);
 // taskManager2.addTasks("sgbvv","hhh","jjj","hgh","cc");
 // console.log(taskManager2.tasks);
 
+//sprint 3 Task 8: Persisting Data
+taskManager.load();
+
+taskManager.render();
+
 
 // select formFieldInput form
 const formFieldInput = document.querySelector("#formFieldInput");
@@ -102,6 +107,7 @@ formFieldInput.addEventListener("submit",(event) => {
 
     // Render the tasks
     taskManager.render();
+    taskManager.save();
 
     // Clear the form input value after submitting 
     formFieldName.value = '';
@@ -139,6 +145,27 @@ tasksList.addEventListener('click', (event) => {
         // Update the task status to 'DONE'
         task.status = 'DONE';
        
+        // Render the tasks
+        taskManager.render();
+
+        taskManager.save();
+    }
+
+    //sprint 3 Task 8: Persisting Data
+     // Check if a "Delete" button was clicked
+     if (event.target.classList.contains('delete-button')) {
+        // Get the parent Task
+        const parentTask = event.target.parentElement.parentElement;
+
+        // Get the taskId of the parent Task.
+        const taskId = Number(parentTask.dataset.taskId);
+
+        // Delete the task
+        taskManager.deleteTask(taskId);
+
+        // Save the tasks to localStorage
+        taskManager.save();
+
         // Render the tasks
         taskManager.render();
     }

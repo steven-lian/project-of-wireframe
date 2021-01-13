@@ -15,10 +15,10 @@ export const createTaskHtml = (id,name,description,assignedTo,dueDate,status) =>
 
     <div class="d-flex w-100 justify-content-end">
         <button class="btn btn-outline-success done-button ${(status === 'To do' ||status === 'In progress'||status === 'Review') ? 'visible' : 'invisible'}">Mark As Done</button>
+        <button class="btn btn-outline-danger delete-button">Delete</button>
     </div>
     </li>
 `;
-
 
 
 
@@ -51,7 +51,29 @@ export class TaskManager {
     
   }
 
-// task 7
+////sprint 3 
+// Create the deleteTask method
+deleteTask(taskId) {
+    // Create an empty array and store it in a new variable, newTasks
+    const newTasks = [];
+
+    // Loop over the tasks
+    for (let i = 0; i < this.tasks.length; i++) {
+        // Get the current task in the loop
+        const task = this.tasks[i];
+
+        // Check if the task id is not the task id passed in as a parameter
+        if (task.id !== taskId) {
+            // Push the task to the newTasks array
+            newTasks.push(task);
+        }
+    }
+
+    // Set this.tasks to newTasks
+    this.tasks = newTasks;
+}
+
+// sprint 2 task 7
 //   Step 4: Adding getTaskById to the TaskManager class
   getTaskById(taskId) {
     // Create a variable to store the found task
@@ -102,6 +124,32 @@ export class TaskManager {
     const tasksList = document.querySelector('#tasksList');
     tasksList.innerHTML = tasksHtml;
     }
+
+    save() {
+        const tasksJson = JSON.stringify(this.tasks);
+
+        localStorage.setItem('tasks', tasksJson);
+
+        const currentId = String(this.currentId);
+
+        localStorage.setItem('currentId', currentId);
+    }
+
+    load() {
+        if (localStorage.getItem('tasks')) {
+            const tasksJson = localStorage.getItem('tasks');
+
+            this.tasks = JSON.parse(tasksJson);
+        }
+
+        if (localStorage.getItem('currentId')) {
+            const currentId = localStorage.getItem('currentId');
+
+            this.currentId = Number(currentId);
+        }
+    }
+     
+
   
 }
 
