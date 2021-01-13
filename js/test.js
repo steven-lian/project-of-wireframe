@@ -41,7 +41,7 @@ describe("TaskManager", () => {
       
         
        taskManager.getTaskById(1);
-        console.log(y);
+        
           assert.ok(x === 1);
     })
 })
