@@ -7,7 +7,7 @@
 
 // import TaskManager class from './taskManager';
 
-import {TaskManager} from './taskManager.js';                                                                                                                               
+// import {TaskManager} from './taskManager.js';                                                                                                                               
 
 //create two new instances to test 
 const taskManager = new TaskManager(0);

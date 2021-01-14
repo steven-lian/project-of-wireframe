@@ -9,10 +9,10 @@
             <span class="badge ${(status === 'To do' ||status === 'In progress'||status === 'Review') ? 'badge-danger' : 'badge-success'}">${status}</span>
         </div>
         <div class="d-flex w-100 mb-3 justify-content-between">
-            <small>Assigned To: ${assignedTo}</small> 
-            <small>Due: ${dueDate}</small>
+       <small>Assigned To : ${assignedTo}</small> 
+       <small>Due : ${dueDate}</small>
         </div>
-        <p>${description}</p>
+        <p>Description : ${description}</p>
 
     <div class="d-flex w-100 justify-content-end">
         <button class="btn btn-outline-success done-button ${(status === 'To do' ||status === 'In progress'||status === 'Review') ? 'visible' : 'invisible'}">Mark As Done</button>
@@ -26,7 +26,7 @@
 
 // Create and export a TaskManager class 
 
- export class TaskManager {
+  class TaskManager {
  
     //creat a empty array called tasks to store each new task object 
     constructor(currentId = 0) {
@@ -125,7 +125,7 @@ deleteTask(taskId) {
     const tasksList = document.querySelector('#tasksList');
     tasksList.innerHTML = tasksHtml;
     }
-
+// sprint 3 task 8 add a save() method to our TaskManager, that we can call to save the current this.tasks to localStorage.
     save() {
         const tasksJson = JSON.stringify(this.tasks);
 
@@ -154,5 +154,5 @@ deleteTask(taskId) {
   
 }
 
-//  module.exports = TaskManager;
+ module.exports = TaskManager;
 //  module.exports = createTaskHtml;
