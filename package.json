@@ -1,0 +1,22 @@
+{
+  "name": "project-of-wireframe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./js/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steven-lian/project-of-wireframe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steven-lian/project-of-wireframe/issues"
+  },
+  "homepage": "https://github.com/steven-lian/project-of-wireframe#readme",
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  }
+}

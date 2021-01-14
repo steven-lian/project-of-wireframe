@@ -1,22 +1,28 @@
 // import createTaskHtml function from './taskManager';
-import {createTaskHtml} from './taskManager.js';
+// import {createTaskHtml} from './taskManager.js';
 
-const taskHtml = createTaskHtml ('name','description','assignedTo','dueDate','status')
+// const taskHtml = createTaskHtml ('name','description','assignedTo','dueDate','status')
 
-console.log(taskHtml);
+// console.log(taskHtml);
 
 // import TaskManager class from './taskManager';
 
-import {TaskManager} from './taskManager.js';
+// import {TaskManager} from './taskManager.js';                                                                                                                               
 
 //create two new instances to test 
 const taskManager = new TaskManager(0);
 // taskManager.addTasks("sgbvv","hhh","jjj","hgh","cc");
+//sprint 3 Task 8: Persisting Data
+taskManager.load();
+
+taskManager.render();
 // console.log(taskManager.tasks);
 
 // const taskManager2 = new TaskManager(0);
 // taskManager2.addTasks("sgbvv","hhh","jjj","hgh","cc");
 // console.log(taskManager2.tasks);
+
+
 
 
 // select formFieldInput form
@@ -104,6 +110,7 @@ formFieldInput.addEventListener("submit",(event) => {
 
     // Render the tasks
     taskManager.render();
+    taskManager.save();
 
     // Clear the form input value after submitting 
     formFieldName.value = '';
@@ -142,6 +149,27 @@ tasksList.addEventListener('click', (event) => {
         // Update the task status to 'DONE'
         task.status = 'DONE';
        
+        // Render the tasks
+        taskManager.render();
+
+        taskManager.save();
+    }
+
+    //sprint 3 Task 8: Persisting Data
+     // Check if a "Delete" button was clicked
+     if (event.target.classList.contains('delete-button')) {
+        // Get the parent Task
+        const parentTask = event.target.parentElement.parentElement;
+
+        // Get the taskId of the parent Task.
+        const taskId = Number(parentTask.dataset.taskId);
+
+        // Delete the task
+        taskManager.deleteTask(taskId);
+
+        // Save the tasks to localStorage
+        taskManager.save();
+
         // Render the tasks
         taskManager.render();
     }
