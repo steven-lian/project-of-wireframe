@@ -9,7 +9,7 @@
             <span class="badge ${(status === 'To do' ||status === 'In progress'||status === 'Review') ? 'badge-danger' : 'badge-success'}">${status}</span>
         </div>
         <div class="d-flex w-100 mb-3 justify-content-between">
-            <small>Assigned To: ${assignedTo}</small>
+            <small>Assigned To: ${assignedTo}</small> 
             <small>Due: ${dueDate}</small>
         </div>
         <p>${description}</p>
@@ -26,7 +26,7 @@
 
 // Create and export a TaskManager class 
 
- class TaskManager {
+ export class TaskManager {
  
     //creat a empty array called tasks to store each new task object 
     constructor(currentId = 0) {
@@ -154,5 +154,5 @@ deleteTask(taskId) {
   
 }
 
- module.exports = TaskManager;
+//  module.exports = TaskManager;
 //  module.exports = createTaskHtml;

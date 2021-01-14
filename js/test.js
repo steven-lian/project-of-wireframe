@@ -36,12 +36,8 @@ describe("TaskManager", () => {
         const taskManager = new TaskManager(0);
         taskManager.addTasks();
         taskManager.addTasks();
-        console.log(taskManager);
-        let x = taskManager.tasks[1].id;
-      
-        
-       taskManager.getTaskById(1);
-        
+        let x = taskManager.getTaskById(1).id;
+              
           assert.ok(x === 1);
     })
 })
