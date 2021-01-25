@@ -13,7 +13,7 @@ describe("TaskManager", () => {
      
       let len = taskManager.tasks.length;
       
-      taskManager.addTasks();
+      taskManager.addTasks("test", "description", "assignedTo", "dueDate");
       
         assert.ok(len < taskManager.tasks.length);
       
@@ -21,7 +21,7 @@ describe("TaskManager", () => {
 
     it("should delete a task", ()=>{
         const taskManager = new TaskManager(0);
-        taskManager.addTasks();
+        taskManager.addTasks("test", "description", "assignedTo", "dueDate");
         console.log(taskManager);
         let len = taskManager.tasks.length;
       
@@ -34,8 +34,8 @@ describe("TaskManager", () => {
     
     it("should get a task by id", ()=>{
         const taskManager = new TaskManager(0);
-        taskManager.addTasks();
-        taskManager.addTasks();
+        taskManager.addTasks("test", "description", "assignedTo", "dueDate");
+        taskManager.addTasks("test", "description", "assignedTo", "dueDate");
         let x = taskManager.getTaskById(1).id;
               
           assert.ok(x === 1);
