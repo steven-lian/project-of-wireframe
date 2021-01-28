@@ -1,14 +1,14 @@
-# project-of-wireframe
+1.General Objectives:
 
-Building up a website named Task Planner
-
-General Objectives:
-
-Create a Task Planner web app from scratch.
+Create a functional Task Planner website to allow users to manage their daily tasks.
 Demonstrate the technical and non-technical skills developed during the Junior Web Developer program.
 
-Details
+2.The code languages used:
+HTML,CSS,JavaScript
 
-This project has 11 tasks (~3 hours each) divided into 3 Sprints.
-Each Sprint will have a demo and a retrospective at the end following the Scrum methodology.
-At the end of the project, you will do a final project presentation to the entire class and potentially to a group of employers.
+3.Set-up requirements:
+install Mocha test suite 
+
+4.link to the github page
+https://steven-lian.github.io/project-of-wireframe/
+
